@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: url('back.jpg') center no-repeat #000000;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  h1, h2 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    font-weight: normal;
+  }
+  p {
+    margin: 0;
+  }
+  input {
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    background-color: inherit;
+  }
+  ul {
+    margin: 0;
+    padding-left: 0;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    color: inherit;
+    background-color: inherit;
+  }
+  :focus {
+    outline: none;
+  }
+  strong {
+    color: #6f6f6f;
+    font-size: 0.9rem;
+  }
+  
+  /* ANIMATIONS */
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  
+  /* APP */
+  .todo {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    max-width: 540px;
+    margin: 0 auto;
+    -webkit-box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.3);
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  .todo > header {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    padding: 30px;
+    position: relative;
+  }
+  .todo__title--main {
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+  }
+  .todo__date {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .todo__count {
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+  .todo__list {
+    padding: 18px 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  .todo__task {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 15% 55% 20% 10%;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .todo__task:hover .todo__close {
+    opacity: 1;
+  }
+  .todo__task:last-child {
+    margin-bottom: 0;
+  }
+  .todo__btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+  .todo__btn--default {
+    background-color: #D1D1D2;
+  }
+  .todo__btn--done, .todo__task[data-done="true"] .todo__btn {
+    background-color: #32ab2a;
+  }
+  .todo__task[data-done="true"] {
+    opacity: 0.3;
+  }
+  .todo__task[data-done="true"] .todo__name {
+    color: #32ab2a;
+  }
+  .todo__name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #6B6B6B;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 2px;
+    border-bottom: solid 1px transparent;
+  }
+  .todo__time {
+    font-size: 0.7rem;
+    text-align: right;
+    color: #D1D1D2;
+    margin-top: 6px;
+  }
+  .todo__ad {
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    border-radius: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  .todo__close {
+    text-align: right;
+    font-size: 1.6rem;
+    margin-top: -2px;
+    color: #BCBCBC;
+    opacity: 0;
+    -webkit-transition-duration: 250ms;
+    -moz-transition-duration: 250ms;
+    -o-transition-duration: 250ms;
+    transition-duration: 250ms;
+  }
+  
+  /* MOBILE */
+  @media screen and (max-width: 750px) {
+    /* APP */
+    .todo {
+      padding: 10px;
+    }
+    .todo__date {
+      font-size: 1.3rem;
+    }
+    .todo__name {
+      font-size: 0.9rem;
+    }
+  }
